@@ -1,0 +1,200 @@
+/*--------------------------- Hero Slider ------------------------------*/
+
+.hero-slider {
+    position: relative;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
+}
+
+.slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slides.active {
+    opacity: 1;
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+}
+
+.dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
+}
+
+.dot.active {
+    background-color: var(--white);
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background-color: var(--white);
+    transform: scale(1.2);
+}
+
+/*------------------------- Wellcome Section ---------------------------*/
+
+.well-sec-con-text-icon-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.well-sec-con-text-icon-wrapper img {
+    margin-right: 10px;
+}
+
+/*------------------------ Highlight Section ---------------------------*/
+/*---------------------- Latest Product Section ------------------------*/
+
+
+.products-slider-wrapper {
+    margin-top: 45px;
+    display: flex;
+    position: relative;
+}
+
+.products-slider-items-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 500px;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.products-slider-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 40px;
+    background-color: var(--silver);
+    align-items: center;
+    text-align: center;
+    transition: all 0.6s ease;
+}
+
+.products-slider-items:hover {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.products-slider-items img {
+    max-width: 180px;
+    max-height: 270px;
+}
+
+.products-slider-items a {
+    text-decoration: none;
+}
+
+.products-slider-items a:nth-child(1) {
+    margin-bottom: 20px;
+}
+
+.products-slider-items h3 {
+    font-size: 14px;
+    transition: color 0.4s ease;
+    margin: 0;
+}
+
+.products-slider-items h3:hover {
+    color: var(--gold);
+}
+
+.products-slider-items span:nth-child(3) {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gold);
+    margin: 8px 0;
+}
+
+.products-slider-items a:nth-child(5) {
+    margin-top: 20px;
+}
+
+.white-button {
+    display: inline-block;
+    padding: 10px 30px;
+    border: var(--gold) solid 3px;
+    background-color: var(--white);
+    color: var(--dark-blue);
+    transition: all 0.5s ease;
+}
+
+.white-button:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.slide-arrow {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: -40px;
+    border: var(--gold) solid 3px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.right-arrow {
+    right: -40px;
+    left: auto;
+}
+
+.slide-arrow:hover {
+    background-color: var(--dark-blue);
+}
+
+.icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: currentColor;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    color: var(--dark-blue);
+}
+
+.icon-arrow-left {
+    mask-image: url("../images/home_page/products_slider/left-arrow.svg");
+}
+
+.icon-arrow-right {
+    mask-image: url("../images/home_page/products_slider/right-arrow.svg");
+}

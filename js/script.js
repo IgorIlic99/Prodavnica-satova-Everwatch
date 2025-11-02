@@ -1,0 +1,134 @@
+const products = [
+    {
+        id: 'LT017',
+        title: 'Lotus satovi',
+        price: 16490.00,
+        category: 'men',
+        status: 'Na stanju',
+        img: 'lotus_satovi_lt017.png',
+        creation_date: new Date("2025-08-26"),
+        highlight: true,
+        desc: 'Rolex Submariner — legendarni ronilački sat s vodootpornošću do 300m, automatski mehanizam, keramički bezel.'
+    },
+    {
+        id: 'SC034',
+        title: 'Sector satovi',
+        price: 15890.00,
+        category: 'men',
+        status: 'Nije na stanju',
+        img: 'sector_satovi_sc034.png',
+        creation_date: new Date("2025-04-02"),
+        highlight: true,
+        desc: 'Omega Speedmaster “Moonwatch” — sat koji je nosio astronaut Buzz Aldrin na Mjesecu, kronograf pokretan ručnim navijanjem.'
+    },
+    {
+        id: 'SC009',
+        title: 'Sector satovi',
+        price: 17990.00,
+        category: 'men',
+        status: 'Nije na stanju',
+        img: 'sector_satovi_sc009.png',
+        creation_date: new Date("2025-01-15"),
+        highlight: true,
+        desc: 'Cartier Tank Louis — elegantan dress sat, četvrtasto kućište, rimski brojevi, inspiracija ratnim tenkovima. :contentReference[oaicite:0]{index=0}'
+    },
+    {
+        id: 'LT026',
+        title: 'Lotus satovi',
+        price: 23090.00,
+        category: 'men',
+        status: 'Na stanju',
+        img: 'lotus_satovi_lt026.png',
+        creation_date: new Date("2024-09-11"),
+        highlight: true,
+        desc: 'Patek Philippe Calatrava — klasični dress sat poznat po jednostavnom i sofisticiranom dizajnu. :contentReference[oaicite:1]{index=1}'
+    },
+    {
+        id: 'SC014',
+        title: 'Sector satovi',
+        price: 12500.00,
+        category: 'men',
+        status: 'Na stanju',
+        img: 'sector_satovi_sc014.png',
+        creation_date: new Date("2024-12-27"),
+        highlight: true,
+        desc: 'TAG Heuer Carrera — sportski kronograf inspiriran auto-moto takmičenjima, sa tačimetrom i jasnom čitljivošću.'
+    },
+    {
+        id: 'LT003',
+        title: 'Lotus satovi',
+        price: 14590.00,
+        category: 'men',
+        status: 'Na stanju',
+        img: 'lotus_satovi_lt003.png',
+        creation_date: new Date("2025-03-05"),
+        highlight: false,
+        desc: 'Breitling Navitimer — pilotski sat sa kliznim rulem i složenim funkcijama za navigaciju.'
+    },
+    {
+        id: 'LT033',
+        title: 'Lotus satovi',
+        price: 16990.00,
+        category: 'men',
+        status: 'Nije na stanju',
+        img: 'lotus_satovi_lt033.png',
+        creation_date: new Date("2024-11-28"),
+        highlight: true,
+        desc: 'Audemars Piguet Royal Oak — sportsko-luksuzni sat s osmerokutnim bezelom i integriranom narukvicom.'
+    },
+    {
+        id: 'LT019',
+        title: 'Lotus satovi',
+        price: 21990.00,
+        category: 'men',
+        status: 'Na stanju',
+        img: 'lotus_satovi_lt019.png',
+        creation_date: new Date("2025-06-25"),
+        highlight: true,
+        desc: 'Hublot Big Bang — bold dizajn, kombinacija materijala (keramika, karbonska vlakna), sportski karakter.'
+    },
+    {
+        id: 'LT024',
+        title: 'Lotus satovi',
+        price: 11850.00,
+        category: 'men',
+        status: 'Na stanju',
+        img: 'lotus_satovi_lt024.png',
+        creation_date: new Date("2025-04-19"),
+        highlight: false,
+        desc: 'Seiko Prospex Diver — pouzdan ronilački sat, ISO-certifikat, automatski mehanizam, odličan omjer cijene i kvalitete.'
+    },
+    {
+        id: 'LT007',
+        title: 'Lotus satovi',
+        price: 23890.00,
+        category: 'men',
+        status: 'Na stanju',
+        img: 'lotus_satovi_lt007.png',
+        creation_date: new Date("2025-01-27"),
+        highlight: true,
+        desc: 'Seiko Prospex Diver — pouzdan ronilački sat, ISO-certifikat, automatski mehanizam, odličan omjer cijene i kvalitete.'
+    },
+    {
+        id: 'LT016',
+        title: 'Lotus satovi',
+        price: 16890.00,
+        category: 'men',
+        status: 'Nije na stanju',
+        img: 'lotus_satovi_lt016.png',
+        creation_date: new Date("2024-08-11"),
+        highlight: false,
+        desc: 'Seiko Prospex Diver — pouzdan ronilački sat, ISO-certifikat, automatski mehanizam, odličan omjer cijene i kvalitete.'
+    },
+    {
+        id: 'LT031',
+        title: 'Lotus satovi',
+        price: 11790.00,
+        category: 'men',
+        status: 'Na stanju',
+        img: 'lotus_satovi_lt031.png',
+        creation_date: new Date("2025-08-23"),
+        highlight: false,
+        desc: 'Seiko Prospex Diver — pouzdan ronilački sat, ISO-certifikat, automatski mehanizam, odličan omjer cijene i kvalitete.'
+    },
+];
