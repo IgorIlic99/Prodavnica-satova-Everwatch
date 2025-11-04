@@ -198,3 +198,101 @@
 .icon-arrow-right {
     mask-image: url("../images/home_page/products_slider/right-arrow.svg");
 }
+
+/*------------------------- Category Section ---------------------------*/
+
+.category-wrapper {
+    display: flex;
+    gap: 15px;
+    font-size: 15px;
+    color: var(--white);
+    margin-top: 45px;
+    font-weight: 300;
+}
+
+.category-wrapper h3 {
+    margin: 0;
+    font-weight: 500;
+    color: var(--gold);
+}
+
+.category-items {
+    padding: 20px 20px;
+    background-color: var(--dark-blue);
+    line-height: 1.4;
+    width: 100%;
+    transition: all 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.category-items:hover {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.blue-button {
+    display: inline-block;
+    padding: 10px 30px;
+    border: var(--gold) solid 3px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-weight: 400;
+    transition: all 0.5s ease;
+}
+
+.category-items a {
+    margin-top: 10px;
+}
+
+.blue-button:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+/*-------------------------- Brands Section ----------------------------*/
+
+.brands-wrapper {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 60px 10px;
+    justify-content: space-between;
+}
+
+.brands-wrapper a {
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+.brands-wrapper a:hover {
+    scale: 1.1;
+}
+
+.brands-wrapper img {
+    max-width: 180px;
+    max-height: 75px;
+}
+
+.brands-wrapper a:nth-child(1),
+.brands-wrapper a:nth-child(5),
+.brands-wrapper a:nth-child(9) {
+    justify-content: left;
+}
+
+.brands-wrapper a:nth-child(2),
+.brands-wrapper a:nth-child(3),
+.brands-wrapper a:nth-child(6),
+.brands-wrapper a:nth-child(7),
+.brands-wrapper a:nth-child(10),
+.brands-wrapper a:nth-child(11) {
+    justify-content: center;
+}
+
+.brands-wrapper a:nth-child(4),
+.brands-wrapper a:nth-child(8),
+.brands-wrapper a:nth-child(12) {
+    justify-content: right;
+}

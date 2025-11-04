@@ -191,3 +191,21 @@ latestProductWrapper.addEventListener("mouseleave", () => {
     latestArrows[1].style.right = '-40px';
     latestArrows[1].style.opacity = '0';
 });
+
+//------------------------- Brands Section --------------------------- 
+
+const brands = document.querySelector(".brands-wrapper");
+
+for (let i = 0; i < brands.children.length; i++) {
+    brands.children[i].addEventListener("mouseenter", () => {
+        for (let j = 0; j < brands.children.length; j++) {
+            brands.children[j].style.filter = 'grayscale(100%)';
+        }
+        brands.children[i].style.filter = 'grayscale(0%)';
+    });
+    brands.children[i].addEventListener("mouseleave", () => {
+        for (let j = 0; j < brands.children.length; j++) {
+            brands.children[j].style.filter = 'grayscale(0%)';
+        }
+    });
+}
