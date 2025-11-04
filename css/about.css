@@ -1,0 +1,122 @@
+/*----------------------- Hero About Section --------------------------*/
+
+.hero-about-section {
+    position: relative;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+}
+
+.hero-about-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.overlay .container {
+    margin-top: 150px;
+}
+
+.overlay h1 {
+    margin: 0 0 13px;
+    color: var(--white);
+    max-width: 100%;
+    text-align: left;
+}
+
+.hero-about-line {
+    height: 4px;
+    width: 445px;
+    background-color: var(--white);
+}
+
+.overlay p {
+    color: var(--white);
+    max-width: 900px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/*----------------------- About Section --------------------------*/
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 75px 0 70px;
+}
+
+.about-sec-right {
+    background-color: var(--dark-blue);
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.about-wrapper-right .about-text {
+    color: var(--white);
+}
+
+.about-wrapper-right .about-text h2 {
+    color: var(--gold);
+}
+
+.about-wrapper-left .about-image {
+    margin-right: 40px;
+}
+
+.about-wrapper-right .about-image {
+    margin-left: 40px;
+}
+
+.about-image img {
+    max-width: 650px;
+    max-height: 450px;
+    object-fit: cover;
+    aspect-ratio: 12 / 8;
+}
+
+.about-text h2 {
+    margin: 0;
+    text-align: left;
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.about-button {
+    display: inline-block;
+    padding: 10px 30px;
+    border: var(--gold) solid 3px;
+    background-color: var(--dark-blue);
+    margin-top: 20px;
+    transition: all 0.4s ease;
+    color: var(--white);
+}
+
+.about-button:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+.about-white-btn {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+.about-white-btn:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
