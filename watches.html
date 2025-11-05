@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O nama</title>
+    <title>Satovi</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/about.css">
+    <link rel="stylesheet" type="text/css" href="./css/watches.css">
     <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
 
     <style>
@@ -31,7 +30,7 @@
                     <a href="./"><img src="images/logo/Everwatch_White_Logo.svg" alt="Everwatch Logo"></a>
                 </div>
                 <div class="nav-menu nav-menu-right">
-                    <div class="nav-link nav-link-right">
+                    <div class="nav-link nav-link-right" id="cart-btn">
                         <a href="">
                             <span>Korpa</span>
                             <img src="icons/icon_cart_gold.svg" alt="Korpa">
@@ -47,113 +46,74 @@
         </div>
     </div>
 
-    <div class="hero-about-section">
-        <div class="overlay">
-            <div class="container">
-                <h1>O nama</h1>
-                <div class="hero-about-line"></div>
-                <p>Everwatch je brend posvećen ljubiteljima satova koji cene spoj elegancije, kvaliteta i pouzdanosti.
-                    Naša
-                    misija je da svakom kupcu omogućimo da pronađe sat koji ne meri samo vreme, već i stil, ličnost i
-                    karakter. U našoj ponudi nalaze se pažljivo odabrani muški, ženski, dečji i univerzalni satovi
-                    izrađeni
-                    od najkvalitetnijih materijala i savremenih mehanizama. Svaki model je rezultat precizne izrade,
-                    modernog dizajna i posvećenosti detaljima. Verujemo da sat nije samo dodatak, to je simbol
-                    elegancije,
-                    uspeha i individualnosti. Zato Everwatch ne prodaje samo satove, već priče koje traju.</p>
-            </div>
-        </div>
-        <img src="images/about_page/about_hero_image.jpg" alt="O nama">
-    </div>
-
-    <div class="about-section about-sec-left">
+    <div class="products-header">
         <div class="container">
-            <div class="about-wrapper about-wrapper-left">
-                <div class="about-image">
-                    <img src="images/about_page/men_watch.jpg" alt="Muški satovi">
+            <div class="products-header-wrapper">
+                <div class="brand-logo-wrapper">
+                    <div class="brand-logo">
+                        <img src="./icons/favicon.svg" alt="Everwatch logo">
+                    </div>
+                    <div>
+                        <h2>Everwatch - Prodavnica</h2>
+                        <p class="subtitle">Originalni satovi iz naše ponude</p>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h2>Muški satovi</h2>
-                    <p>Snažni, precizni i elegantni naši muški satovi predstavljaju savršen spoj stila i
-                        funkcionalnosti. Bilo da tražite klasični model za poslovne prilike ili sportski sat za aktivan
-                        životni stil, Everwatch kolekcija nudi vrhunske materijale, pouzdane mehanizme i bezvremenski
-                        dizajn koji odražava samopouzdanje i karakter svakog muškarca.
-                    </p>
-                    <a href="">
-                        <div class="about-button about-white-btn">
-                            <span>Pogledaj više</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="about-section about-sec-right">
-        <div class="container">
-            <div class="about-wrapper about-wrapper-right">
-                <div class="about-text">
-                    <h2>Ženski satovi</h2>
-                    <p>Za žene koje cene eleganciju, prefinjenost i originalnost. Naši ženski satovi kombinuju luksuzne
-                        detalje sa modernim linijama, nudeći savršen dodatak svakoj odevnoj kombinaciji.
-                        Od minimalističkih modela do satova ukrašenih kristalima, svaki Everwatch sat osmišljen je da
-                        naglasi lepotu i sofisticiranost svoje vlasnice.
-                    </p>
-                    <a href="">
-                        <div class="about-button">
-                            <span>Pogledaj više</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="about-image">
-                    <img src="images/about_page/women_watch.jpeg" alt="Ženski satovi">
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="about-section about-sec-left">
-        <div class="container">
-            <div class="about-wrapper about-wrapper-left">
-                <div class="about-image">
-                    <img src="images/about_page/kid_watch.jpg" alt="Dečiji satovi">
-                </div>
-                <div class="about-text">
-                    <h2>Dečiji satovi</h2>
-                    <p>Zabavni, šareni i pouzdani Everwatch dečji satovi pomažu najmlađima da nauče vrednost vremena
-                        kroz igru. Izrađeni su od bezbednih i izdržljivih materijala, otporni na udarce i vodu, savršeni
-                        za svakodnevne avanture. Uz veseli dizajn i lako čitljiv brojčanik, deca će ih jednostavno
-                        obožavat.
-                    </p>
-                    <a href="">
-                        <div class="about-button about-white-btn">
-                            <span>Pogledaj više</span>
-                        </div>
-                    </a>
+                <div class="controls">
+                    <input class="search" placeholder="Pretraži satove..." id="search">
+                    <select id="filter">
+                        <option value="all">Svi</option>
+                        <option value="men">Muški</option>
+                        <option value="women">Ženski</option>
+                        <option value="kid">Dečiji</option>
+                        <option value="universal">Univerzalni</option>
+                    </select>
+                    <select id="filter-brands">
+                        <option value="all">Svi</option>
+                        <option value="calypso">Calypso</option>
+                        <option value="casio">Casio</option>
+                        <option value="daniel_klein">Daniel Klein</option>
+                        <option value="edifice">Edifice</option>
+                        <option value="esprit">Esprit</option>
+                        <option value="festina">Festina</option>
+                        <option value="fossil">Fossil</option>
+                        <option value="guess">Guess</option>
+                        <option value="lotus">Lotus</option>
+                        <option value="police">Police</option>
+                        <option value="rosefield">Rosefield</option>
+                        <option value="sector">Sector</option>
+                        <option value="tommy_hilfiger">Tommy Hilfiger</option>
+                    </select>
+                    <select id="filter-stock">
+                        <option value="all">Svi</option>
+                        <option value="in_stock">Na stanju</option>
+                        <option value="out_stock">Nije na stanju</option>
+                    </select>
+                    <select id="sort">
+                        <option value="default">Sortiraj</option>
+                        <option value="price-asc">Rastuće</option>
+                        <option value="price-desc">Opadajuće</option>
+                    </select>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="about-section about-sec-right">
+    <div class="products-section all-section">
         <div class="container">
-            <div class="about-wrapper about-wrapper-right">
-                <div class="about-text">
-                    <h2>Univerzalni satovi</h2>
-                    <p>Everwatch univerzalni satovi predstavljaju spoj sofisticiranog dizajna i besprekornog kvaliteta.
-                        Njihova jednostavna elegancija i besprekorna preciznost čine ih idealnim dodatkom svakoj
-                        kombinaciji, od poslovne do ležerne. Sa Everwatch satom, svaki trenutak postaje vredan pažnje.
-                    </p>
-                    <a href="">
-                        <div class="about-button">
-                            <span>Pogledaj više</span>
-                        </div>
-                    </a>
+            <div class="products-section-wrapper">
+                <div class="products-section-items-wrapper"></div>
+                <div class="products-cart-wrapper">
+                    <h3 class="cart-title">Korpa</h3>
+                    <div class="products-cart-list" id="products-cart-list">
+                        <p>Korpa je prazna</p>
+                    </div>
+                    <div class="products-cart-total-wrapper">
+                        <span>Ukupno:</span>
+                        <span class="products-cart-total">0 RSD</span>
+                    </div>
+                    <button class="order-button" id="order-button">Naruči</button>
                 </div>
-                <div class="about-image">
-                    <img src="images/about_page/universal_watch.jpg" alt="Univerzalni satovi">
-                </div>
+
             </div>
         </div>
     </div>
@@ -234,4 +194,21 @@
         </div>
     </div>
 
+    <div class="pop-up-cart">
+        <h3 class="cart-title">Korpa</h3>
+        <div class="products-cart-list" id="products-cart-list">
+            <p>Korpa je prazna</p>
+        </div>
+        <div class="products-cart-total-wrapper">
+            <span>Ukupno:</span>
+            <span class="products-cart-total">0 RSD</span>
+        </div>
+        <button class="order-button" id="order-button">Naruči</button>
+    </div>
+
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/watches.js"></script>
+
 </body>
+
+</html>

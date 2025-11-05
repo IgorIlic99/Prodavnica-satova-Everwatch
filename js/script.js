@@ -2,17 +2,20 @@ const products = [
     {
         id: 'LT017',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 16490.00,
         category: 'men',
         status: 'Na stanju',
         img: 'lotus_satovi_lt017.png',
         creation_date: new Date("2025-08-26"),
         highlight: true,
+        added_quantity: 0,
         desc: 'Rolex Submariner — legendarni ronilački sat s vodootpornošću do 300m, automatski mehanizam, keramički bezel.'
     },
     {
         id: 'SC034',
         title: 'Sector satovi',
+        brand: 'Sector',
         price: 15890.00,
         category: 'men',
         status: 'Nije na stanju',
@@ -24,6 +27,7 @@ const products = [
     {
         id: 'SC009',
         title: 'Sector satovi',
+        brand: 'Sector',
         price: 17990.00,
         category: 'men',
         status: 'Nije na stanju',
@@ -35,6 +39,7 @@ const products = [
     {
         id: 'LT026',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 23090.00,
         category: 'men',
         status: 'Na stanju',
@@ -46,6 +51,7 @@ const products = [
     {
         id: 'SC014',
         title: 'Sector satovi',
+        brand: 'Sector',
         price: 12500.00,
         category: 'men',
         status: 'Na stanju',
@@ -57,6 +63,7 @@ const products = [
     {
         id: 'LT003',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 14590.00,
         category: 'men',
         status: 'Na stanju',
@@ -68,6 +75,7 @@ const products = [
     {
         id: 'LT033',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 16990.00,
         category: 'men',
         status: 'Nije na stanju',
@@ -79,6 +87,7 @@ const products = [
     {
         id: 'LT019',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 21990.00,
         category: 'men',
         status: 'Na stanju',
@@ -90,6 +99,7 @@ const products = [
     {
         id: 'LT024',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 11850.00,
         category: 'men',
         status: 'Na stanju',
@@ -101,6 +111,7 @@ const products = [
     {
         id: 'LT007',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 23890.00,
         category: 'men',
         status: 'Na stanju',
@@ -112,6 +123,7 @@ const products = [
     {
         id: 'LT016',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 16890.00,
         category: 'men',
         status: 'Nije na stanju',
@@ -123,6 +135,7 @@ const products = [
     {
         id: 'LT031',
         title: 'Lotus satovi',
+        brand: 'Lotus',
         price: 11790.00,
         category: 'men',
         status: 'Na stanju',
@@ -131,4 +144,4 @@ const products = [
         highlight: false,
         desc: 'Seiko Prospex Diver — pouzdan ronilački sat, ISO-certifikat, automatski mehanizam, odličan omjer cijene i kvalitete.'
     },
-];
+]
