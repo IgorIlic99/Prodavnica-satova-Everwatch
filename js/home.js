@@ -33,6 +33,24 @@ for (let i = 0; i < dots.length; i++) {
 showSlide(currentIndex);
 startSlider();
 
+//------------------------- Brands Section --------------------------- 
+
+const brands = document.querySelector(".brands-wrapper");
+
+for (let i = 0; i < brands.children.length; i++) {
+    brands.children[i].addEventListener("mouseenter", () => {
+        for (let j = 0; j < brands.children.length; j++) {
+            brands.children[j].style.filter = 'grayscale(100%)';
+        }
+        brands.children[i].style.filter = 'grayscale(0%)';
+    });
+    brands.children[i].addEventListener("mouseleave", () => {
+        for (let j = 0; j < brands.children.length; j++) {
+            brands.children[j].style.filter = 'grayscale(0%)';
+        }
+    });
+}
+
 //------------------------ Highlight Section -------------------------- 
 
 const highlightItemsWrapper = document.querySelector(".highlight-items-wrapper");
@@ -60,19 +78,21 @@ function renderProducts(startIndex) {
             });
             highlightItemsWrapper.innerHTML +=
                 `<div class="products-slider-items">
-                    <a href="">
+                    <a href="" class="product-link" data-id="${product.id}">
                         <img src="images/products/${product.img}" alt="${product.title}">
                     </a>
-                    <a href="">
-                        <h3>${product.title.toUpperCase()} - ${product.id}</h3>
-                    </a>
-                    <span>${product.status}</span>
-                    <span>${formatedPrice} RSD</span>
-                    <a href="">
-                        <div class="white-button">
-                            <span>Dodaj u korpu</span>
-                        </div>
-                    </a>
+                    <div class="products-slider-items-text-btn">
+                        <a href="" class="product-link" data-id="${product.id}">
+                            <h3>${product.title.toUpperCase()} - ${product.id}</h3>
+                        </a>
+                        <span>${product.status}</span>
+                        <span>${formatedPrice} RSD</span>
+                        <a href="">
+                            <div class="white-button product-btn" data-id="${product.id}">
+                                <span>Dodaj u korpu</span>
+                            </div>
+                        </a>
+                    </div>    
                 </div>`;
         }
         highlightItemsWrapper.classList.remove('hidden');
@@ -139,19 +159,21 @@ function renderLatestProducts(startIndex) {
             });
             latestProductsItemsWrapper.innerHTML += `
                 <div class="products-slider-items">
-                    <a href="">
+                    <a href="" class="product-link" data-id="${product.id}">
                         <img src="images/products/${product.img}" alt="${product.title}">
                     </a>
-                    <a href="">
-                        <h3>${product.title.toUpperCase()} - ${product.id}</h3>
-                    </a>
-                    <span>${product.status}</span>
-                    <span>${formatedPrice} RSD</span>
-                    <a href="">
-                        <div class="white-button">
-                            <span>Dodaj u korpu</span>
-                        </div>
-                    </a>
+                    <div class="products-slider-items-text-btn">
+                        <a href="" class="product-link" data-id="${product.id}">
+                            <h3>${product.title.toUpperCase()} - ${product.id}</h3>
+                        </a>
+                        <span>${product.status}</span>
+                        <span>${formatedPrice} RSD</span>
+                        <a href="">
+                            <div class="white-button product-btn" data-id="${product.id}">
+                                <span>Dodaj u korpu</span>
+                            </div>
+                        </a>
+                    </div>    
                 </div>
             `;
         };
@@ -191,21 +213,3 @@ latestProductWrapper.addEventListener("mouseleave", () => {
     latestArrows[1].style.right = '-40px';
     latestArrows[1].style.opacity = '0';
 });
-
-//------------------------- Brands Section --------------------------- 
-
-const brands = document.querySelector(".brands-wrapper");
-
-for (let i = 0; i < brands.children.length; i++) {
-    brands.children[i].addEventListener("mouseenter", () => {
-        for (let j = 0; j < brands.children.length; j++) {
-            brands.children[j].style.filter = 'grayscale(100%)';
-        }
-        brands.children[i].style.filter = 'grayscale(0%)';
-    });
-    brands.children[i].addEventListener("mouseleave", () => {
-        for (let j = 0; j < brands.children.length; j++) {
-            brands.children[j].style.filter = 'grayscale(0%)';
-        }
-    });
-}

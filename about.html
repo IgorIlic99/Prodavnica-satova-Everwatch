@@ -31,12 +31,19 @@
                     <a href="./"><img src="images/logo/Everwatch_White_Logo.svg" alt="Everwatch Logo"></a>
                 </div>
                 <div class="nav-menu nav-menu-right">
-                    <div class="nav-link nav-link-right">
+                    <div class="nav-link nav-link-right" id="orders-btn">
+                        <a href="./orders.html">
+                            <span>Narudžbine</span>
+                            <img src="icons/box_icon.svg" alt="Narudžbine">
+                        </a>
+                    </div>
+                    <div class="nav-link nav-link-right" id="cart-btn">
                         <a href="">
                             <span>Korpa</span>
                             <img src="icons/icon_cart_gold.svg" alt="Korpa">
+                        </a>
                     </div>
-                    <div class="nav-link nav-link-right">
+                    <div class="nav-link nav-link-right" id="search-btn">
                         <a href="">
                             <span>Pretraga</span>
                             <img src="icons/icon_search_gold.svg" alt="Pretraga">
@@ -233,5 +240,60 @@
             </div>
         </div>
     </div>
+
+    <div class="pop-up-cart">
+        <h3 class="cart-title">Korpa</h3>
+        <div class="products-cart-list" id="products-cart-list">
+            <p>Korpa je prazna</p>
+        </div>
+        <div class="products-cart-total-wrapper">
+            <span>Ukupno:</span>
+            <span class="products-cart-total">0 RSD</span>
+        </div>
+        <button class="order-button" id="order-button">Naruči</button>
+    </div>
+
+    <div class="pop-up-search">
+        <input class="search" placeholder="Pretražite satove..." id="pop-up-search">
+        <div class="filtered-search-products">
+            <p>Nema rezultata pretrage</p>
+        </div>
+    </div>
+
+    <div class="pop-up-product pop-up-product-close">
+        <div class="pop-up-product-wrapper">
+            <img src="images/products/lotus_satovi_lt003.png" alt="Lotus satovi">
+            <div class="pop-up-product-content">
+                <h3>Lotus satovi</h3>
+                <span>Šifra artikla: LT009</span>
+                <span>Na stanju</span>
+                <span>11.990,00 RSD x 1</span>
+
+                <div class="product-quantity">
+                    <span class="counter-desc">-</span>
+                    <span class="counter">2</span>
+                    <span class="counter-asc">+</span>
+                </div>
+
+                <div class="product-description">
+                    <p>Rolex Submariner — legendarni ronilački sat s vodootpornošću do 300m, automatski mehanizam,
+                        keramički bezel.
+                    </p>
+                </div>
+
+                <a href="">
+                    <div class="white-button product-btn" data-id="${product.id}">
+                        <span>Dodaj u korpu</span>
+                    </div>
+                </a>
+
+                <div class="close-btn">
+                    <img src="icons/close_icon.svg" alt="Close">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/script.js"></script>
 
 </body>

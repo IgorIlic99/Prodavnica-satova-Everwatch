@@ -1,0 +1,116 @@
+/*-------------------------- Orders Section ---------------------------*/
+
+.orders-section-content {
+    padding: 30px 0 50px;
+}
+
+.orders-section-content {
+    background-color: var(--white);
+}
+
+.orders-section-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 60px;
+}
+
+.orders-section-wrapper h3 {
+    margin-bottom: 10px;
+}
+
+/*-------------------------- Orders Information ---------------------------*/
+
+.orders-information {
+    display: flex;
+    flex-direction: column;
+    width: calc(60% - 30px);
+}
+
+.contact-information,
+.delivery-address,
+.billing-address {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.billing-address {
+    margin-bottom: 5px;
+}
+
+.orders-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.orders-content span {
+    margin: 4px 0;
+}
+
+/*-------------------------- Orders Products ----------------------*/
+
+.orders-products {
+    display: flex;
+    flex-direction: column;
+    width: calc(40% - 30px);
+}
+
+.orders-products h3 {
+    margin-bottom: 18px;
+}
+
+.orders-products-delivery,
+.orders-products-total-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.orders-products-delivery {
+    color: var(--gold);
+    padding: 15px 0;
+    margin: 15px 0;
+    border-bottom: var(--silver) 3px solid;
+}
+
+.orders-products-total-price {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.orders-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orders-product-img-mini-info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.orders-product-img-mini-info-wrapper img {
+    margin: 15px 0;
+    max-height: 120px;
+}
+
+.orders-product-mini-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+.orders-product-mini-info span {
+    font-weight: 500;
+}
+
+.orders-product-mini-info span:nth-child(1) {
+    font-size: 17px;
+}
+
+.orders-product-mini-info span:nth-child(2) {
+    color: var(--gold);
+    font-size: 15px;
+    margin: 2px 0;
+}

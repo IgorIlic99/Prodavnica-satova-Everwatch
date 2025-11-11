@@ -1,4 +1,4 @@
-//------------------------Contact Form----------------------------
+//------------------------ Contact Form ----------------------------
 
 document.querySelector('.contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();

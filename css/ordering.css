@@ -1,0 +1,195 @@
+/*-------------------------- Ordering Section ---------------------------*/
+
+.ordering-section {
+    margin: 20px 0 60px;
+}
+
+.ordering-section-content {
+    display: flex;
+    width: 100%;
+    gap: 60px;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ordering-section-content h3 {
+    margin-bottom: 18px;
+}
+
+/*-------------------------- Ordering Form ---------------------------*/
+
+.ordering-form {
+    display: flex;
+    flex-direction: column;
+    width: calc(60% - 30px);
+}
+
+.ordering-form input,
+textarea {
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.contact-information,
+.delivery-address,
+.billing-address {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-wrapper input,
+.input-message textarea {
+    border-radius: 0;
+    border: var(--dark-blue) 1px solid;
+    color: var(--dark-blue);
+    outline: none;
+}
+
+.input-wrapper input {
+    height: 50px;
+    padding: 10px;
+    width: calc(50% - 5px);
+}
+
+.input-message textarea {
+    height: 150px;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.input-wrapper input::placeholder,
+.input-message textarea::placeholder {
+    color: var(--dark-blue);
+}
+
+.input-wrapper input:focus,
+.input-message textarea:focus {
+    border-radius: 4px;
+    border: var(--gold) 2px solid;
+}
+
+.full-input input {
+    width: 100%;
+}
+
+.ordering-submit {
+    margin-top: 30px;
+}
+
+.white-button {
+    display: inline-block;
+    padding: 10px 50px;
+    border: var(--gold) solid 3px;
+    background-color: var(--white);
+    color: var(--dark-blue);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.white-button:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.billing-address {
+    margin-top: 15px;
+}
+
+.contact-information p,
+.billing-address-title p,
+.delivery-address-title p {
+    margin-bottom: 6px;
+}
+
+.billing-address-check {
+    display: flex;
+    font-size: 13px;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.billing-address-check input {
+    width: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.billing-address-check label {
+    user-select: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/*-------------------------- Ordering Products ----------------------*/
+
+.ordering-products {
+    display: flex;
+    flex-direction: column;
+    width: calc(40% - 30px);
+}
+
+.ordering-products-delivery,
+.ordering-products-total-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ordering-products-delivery {
+    color: var(--gold);
+    padding: 15px 0;
+    margin: 15px 0;
+    border-bottom: var(--silver) 3px solid;
+}
+
+.ordering-products-total-price { 
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.ordering-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ordering-product-img-mini-info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.ordering-product-img-mini-info-wrapper img {
+    margin: 15px 0;
+    max-height: 120px;
+}
+
+.ordering-product-mini-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+.ordering-product-mini-info span {
+    font-weight: 500;
+}
+
+.ordering-product-mini-info span:nth-child(1) {
+    font-size: 17px;
+}
+
+.ordering-product-mini-info span:nth-child(2) {
+    color: var(--gold);
+    font-size: 15px;
+    margin: 2px 0;
+}
+

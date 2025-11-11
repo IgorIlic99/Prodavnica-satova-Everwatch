@@ -4,34 +4,39 @@
 const productsItemsWrapper = document.querySelector(".products-section-items-wrapper");
 let product;
 let formatedPrice;
+let renderTimeout;
 
 function renderProducts(productsList) {
+    clearTimeout(renderTimeout);
     productsItemsWrapper.classList.add('hidden');
     productsItemsWrapper.innerHTML = '';
-    setTimeout(() => {
+    renderTimeout = setTimeout(() => {
         for (let i = 0; i < productsList.length; i++) {
-            product = productsList[i];
-            formatedPrice = product.price.toLocaleString('sr-RS', {
+            const product = productsList[i];
+            const formatedPrice = product.price.toLocaleString('sr-RS', {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
             });
-            productsItemsWrapper.innerHTML +=
-                `<div class="products-section-items">
-                    <a href="">
+            productsItemsWrapper.innerHTML += `
+                <div class="products-section-items">
+                    <a href="" class="product-link" data-id="${product.id}">
                         <img src="images/products/${product.img}" alt="${product.title}">
                     </a>
-                    <a href="">
-                        <h3>${product.title.toUpperCase()} - ${product.id}</h3>
-                    </a>
-                    <span>${product.status}</span>
-                    <span>${formatedPrice} RSD</span>
-                    <a href="">
-                        <div class="white-button product-btn" data-id="${product.id}">
-                            <span>Dodaj u korpu</span>
-                        </div>
-                    </a>
+                    <div class="products-section-items-text-btn">
+                        <a href="" class="product-link" data-id="${product.id}">
+                            <h3>${product.title.toUpperCase()} - ${product.id}</h3>
+                        </a>
+                        <span>${product.status}</span>
+                        <span>${formatedPrice} RSD</span>
+                        <a href="">
+                            <div class="white-button product-btn" data-id="${product.id}">
+                                <span>Dodaj u korpu</span>
+                            </div>
+                        </a>
+                    </div>    
                 </div>`;
         }
+
         productsItemsWrapper.classList.remove('hidden');
     }, 400);
 }

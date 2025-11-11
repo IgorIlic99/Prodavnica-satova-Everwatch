@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satovi</title>
+    <title>Naručivanje</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/watches.css">
+    <link rel="stylesheet" type="text/css" href="./css/ordering.css">
     <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
 
     <style>
@@ -53,73 +53,107 @@
         </div>
     </div>
 
-    <div class="products-header">
+    <div class="ordering-section">
         <div class="container">
-            <div class="products-header-wrapper">
-                <div class="brand-logo-wrapper">
-                    <div class="brand-logo">
-                        <img src="./icons/favicon.svg" alt="Everwatch logo">
+            <div class="ordering-section-content">
+                <form class="ordering-form" method="POST">
+                    <div class="contact-information">
+                        <div class="contact-information-title">
+                            <h3>KONTAKT INFORMACIJE</h3>
+                            <p>Kontakt informacije koristimo za slanje detalja i ažuriranja vaše narudžbine.</p>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="broj-telefona" placeholder="Broj telefona" required>
+                            <input type="email" name="e-mail" placeholder="E-mail adresa" required>
+                        </div>
                     </div>
-                    <div>
-                        <h2>Everwatch - Prodavnica</h2>
-                        <p class="subtitle">Originalni satovi iz naše ponude</p>
+                    <div class="delivery-address">
+                        <div class="delivery-address-title">
+                            <h3>ADRESA ZA ISPORUKU</h3>
+                            <p>Unesite adresu na koju želite da vam bude isporučena porudžbina.</p>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="ime" placeholder="Ime" required>
+                            <input type="text" name="prezime" placeholder="Prezime" required>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="grad" placeholder="Grad" required>
+                            <input type="text" name="naselje" placeholder="Naselje (opciono)">
+                        </div>
+                        <div class="input-wrapper full-input">
+                            <input type="text" name="adresa" placeholder="Adresa" required>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="postanski-broj" placeholder="Poštanski broj" required>
+                            <input type="text" name="okrug" placeholder="Okrug (opciono)">
+                        </div>
+                        <div class="input-message">
+                            <textarea name="napomena" placeholder="Napomena (opciono)"></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="controls">
-                    <input class="search" placeholder="Pretražite satove..." id="search">
-                    <select id="filter">
-                        <option value="all">Svi</option>
-                        <option value="men">Muški</option>
-                        <option value="women">Ženski</option>
-                        <option value="kid">Dečiji</option>
-                        <option value="universal">Univerzalni</option>
-                    </select>
-                    <select id="filter-brands">
-                        <option value="all">Svi</option>
-                        <option value="calypso">Calypso</option>
-                        <option value="casio">Casio</option>
-                        <option value="daniel klein">Daniel Klein</option>
-                        <option value="edifice">Edifice</option>
-                        <option value="esprit">Esprit</option>
-                        <option value="fossil">Fossil</option>
-                        <option value="guess">Guess</option>
-                        <option value="lotus">Lotus</option>
-                        <option value="police">Police</option>
-                        <option value="rosefield">Rosefield</option>
-                        <option value="sector">Sector</option>
-                        <option value="tommy hilfiger">Tommy Hilfiger</option>
-                    </select>
-                    <select id="filter-stock">
-                        <option value="all">Svi</option>
-                        <option value="in_stock">Na stanju</option>
-                        <option value="out_stock">Nije na stanju</option>
-                    </select>
-                    <select id="sort">
-                        <option value="default">Sortiraj</option>
-                        <option value="price-asc">Rastuće</option>
-                        <option value="price-desc">Opadajuće</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="products-section all-section">
-        <div class="container">
-            <div class="products-section-wrapper">
-                <div class="products-section-items-wrapper"></div>
-                <div class="products-cart-wrapper">
-                    <h3 class="cart-title">Korpa</h3>
-                    <div class="products-cart-list" id="products-cart-list">
-                        <p>Korpa je prazna</p>
+                    <div class="billing-address-check">
+                        <input type="checkbox" name="check" id="check" checked>
+                        <label for="check">Koristite istu adresu za naplatu</label>
                     </div>
-                    <div class="products-cart-total-wrapper">
+                    <div class="billing-address hidden">
+                        <div class="billing-address-title">
+                            <h3>ADRESA ZA NAPLATU</h3>
+                            <p>Unesite adresu koja odgovara načinu plaćanja.</p>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="ime" placeholder="Ime" required>
+                            <input type="text" name="prezime" placeholder="Prezime" required>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="grad" placeholder="Grad" required>
+                            <input type="text" name="naselje" placeholder="Naselje (opciono)">
+                        </div>
+                        <div class="input-wrapper full-input">
+                            <input type="text" name="adresa" placeholder="Adresa" required>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" name="postanski-broj" placeholder="Poštanski broj" required>
+                            <input type="text" name="okrug" placeholder="Okrug (opciono)">
+                        </div>
+                    </div>
+                    <div class="ordering-submit">
+                        <button class="white-button" type="submit">Naruči</button>
+                    </div>
+                </form>
+                <div class="ordering-products">
+                    <h3>PROIZVODI IZ KORPE</h3>
+                    <div class="ordering-products-list">
+                        <div class="ordering-product">
+                            <div class="ordering-product-img-mini-info-wrapper">
+                                <img src="images/products/lotus_satovi_lt017.png" alt="Lotus satovi">
+                                <div class="ordering-product-mini-info">
+                                    <span>Lotus</span>
+                                    <span>LT017</span>
+                                    <span>16.490 RSD x 3</span>
+                                </div>
+                            </div>
+                            <span>49.470 RSD</span>
+                        </div>
+                        <div class="ordering-product">
+                            <div class="ordering-product-img-mini-info-wrapper">
+                                <img src="images/products/lotus_satovi_lt019.png" alt="Lotus satovi">                                <div class="ordering-product-mini-info">
+                                    <span>Lotus</span>
+                                    <span>LT019</span>
+                                    <span>21.990 RSD x 2</span>
+                                </div>
+                            </div>
+                            <span>43.980 RSD</span>
+                        </div>
+                    </div>
+                    <div class="ordering-products-delivery">
+                        <span>Dostava:</span>
+                        <span>Besplatna</span>
+                    </div>
+                    <div class="ordering-products-total-price">
                         <span>Ukupno:</span>
-                        <span class="products-cart-total">0 RSD</span>
+                        <span id="ordering-products-total-price">154.980,00 RSD</span>
                     </div>
-                    <button class="order-button" id="order-button">Naruči</button>
                 </div>
-
             </div>
         </div>
     </div>
@@ -254,7 +288,7 @@
     </div>
 
     <script type="text/javascript" src="./js/script.js"></script>
-    <script type="text/javascript" src="./js/watches.js"></script>
+    <script type="text/javascript" src="./js/ordering.js"></script>
 
 </body>
 

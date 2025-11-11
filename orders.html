@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satovi</title>
+    <title>Naručivanje</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/watches.css">
+    <link rel="stylesheet" type="text/css" href="./css/orders.css">
     <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
 
     <style>
@@ -53,76 +53,7 @@
         </div>
     </div>
 
-    <div class="products-header">
-        <div class="container">
-            <div class="products-header-wrapper">
-                <div class="brand-logo-wrapper">
-                    <div class="brand-logo">
-                        <img src="./icons/favicon.svg" alt="Everwatch logo">
-                    </div>
-                    <div>
-                        <h2>Everwatch - Prodavnica</h2>
-                        <p class="subtitle">Originalni satovi iz naše ponude</p>
-                    </div>
-                </div>
-                <div class="controls">
-                    <input class="search" placeholder="Pretražite satove..." id="search">
-                    <select id="filter">
-                        <option value="all">Svi</option>
-                        <option value="men">Muški</option>
-                        <option value="women">Ženski</option>
-                        <option value="kid">Dečiji</option>
-                        <option value="universal">Univerzalni</option>
-                    </select>
-                    <select id="filter-brands">
-                        <option value="all">Svi</option>
-                        <option value="calypso">Calypso</option>
-                        <option value="casio">Casio</option>
-                        <option value="daniel klein">Daniel Klein</option>
-                        <option value="edifice">Edifice</option>
-                        <option value="esprit">Esprit</option>
-                        <option value="fossil">Fossil</option>
-                        <option value="guess">Guess</option>
-                        <option value="lotus">Lotus</option>
-                        <option value="police">Police</option>
-                        <option value="rosefield">Rosefield</option>
-                        <option value="sector">Sector</option>
-                        <option value="tommy hilfiger">Tommy Hilfiger</option>
-                    </select>
-                    <select id="filter-stock">
-                        <option value="all">Svi</option>
-                        <option value="in_stock">Na stanju</option>
-                        <option value="out_stock">Nije na stanju</option>
-                    </select>
-                    <select id="sort">
-                        <option value="default">Sortiraj</option>
-                        <option value="price-asc">Rastuće</option>
-                        <option value="price-desc">Opadajuće</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="products-section all-section">
-        <div class="container">
-            <div class="products-section-wrapper">
-                <div class="products-section-items-wrapper"></div>
-                <div class="products-cart-wrapper">
-                    <h3 class="cart-title">Korpa</h3>
-                    <div class="products-cart-list" id="products-cart-list">
-                        <p>Korpa je prazna</p>
-                    </div>
-                    <div class="products-cart-total-wrapper">
-                        <span>Ukupno:</span>
-                        <span class="products-cart-total">0 RSD</span>
-                    </div>
-                    <button class="order-button" id="order-button">Naruči</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    <div class="orders-section"></div>
 
     <div class="suggestions-section">
         <div class="container">
@@ -254,7 +185,7 @@
     </div>
 
     <script type="text/javascript" src="./js/script.js"></script>
-    <script type="text/javascript" src="./js/watches.js"></script>
+    <script type="text/javascript" src="./js/orders.js"></script>
 
 </body>
 
