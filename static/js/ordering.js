@@ -1,3 +1,4 @@
+
 //-------------- Dodavanje i uklanjanje adrese za naplatu --------------
 
 const checkBox = document.querySelector("#check");
@@ -50,7 +51,7 @@ function addingOrderingProductsList() {
         orderingProductsList.innerHTML += `
             <div class="ordering-product">
                 <div class="ordering-product-img-mini-info-wrapper">
-                    <img src="images/products/${list[i].img}" alt="${list[i].title}">
+                    <img src="static/images/products/${list[i].img}" alt="${list[i].title}">
                     <div class="ordering-product-mini-info">
                         <span>${list[i].brand}</span>
                         <span>${list[i].id}</span>
@@ -68,6 +69,7 @@ addingOrderingProductsList();
 //------------------------ Ordering Form ----------------------------
 
 document.querySelector('.ordering-form').addEventListener('submit', async function (e) {
+
     e.preventDefault();
 
     const contactData = {
@@ -124,8 +126,7 @@ document.querySelector('.ordering-form').addEventListener('submit', async functi
     if (response.ok) {
         saveOrdersToLocalStorage(orderData);
         saveProductsToLocalStorage([]);
-        window.location.href = "orders.html";
-        this.reset();
+        window.location.href = "orders";
     } else {
         alert('Došlo je do greške pri naručivanju.');
     }

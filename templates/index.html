@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Everwatch - Prodavnica satova</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
-    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/home.css">
+    <link rel="icon" type="image/svg+xml" href="../static/images/icons/favicon.svg">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300..700&display=swap');
@@ -23,30 +23,30 @@
             <div class="nav-wrapper">
                 <div class="nav-menu nav-menu-left">
                     <div class="nav-link"><a href="./"><span>Početna</span></a></div>
-                    <div class="nav-link"><a href="./watches.html"><span>Satovi</span></a></div>
-                    <div class="nav-link"><a href="./about.html"><span>O nama</span></a></div>
-                    <div class="nav-link"><a href="./contact.html"><span>Kontakt</span></a></div>
+                    <div class="nav-link"><a href="{{ url_for('watches') }}"><span>Satovi</span></a></div>
+                    <div class="nav-link"><a href="{{ url_for('about') }}"><span>O nama</span></a></div>
+                    <div class="nav-link"><a href="{{ url_for('contact') }}"><span>Kontakt</span></a></div>
                 </div>
                 <div class="brand">
-                    <a href="./"><img src="images/logo/Everwatch_White_Logo.svg" alt="Everwatch Logo"></a>
+                    <a href="./"><img src="{{ url_for('static', filename='images/logo/Everwatch_White_Logo.svg') }}" alt="Everwatch Logo"></a>
                 </div>
                 <div class="nav-menu nav-menu-right">
-                    <div class="nav-link nav-link-right" id="orders-btn">
-                        <a href="./orders.html">
+                    <div class="nav-link nav-link-right orders-btn" id="orders-btn">
+                        <a href="{{ url_for('orders') }}">
                             <span>Narudžbine</span>
-                            <img src="icons/box_icon.svg" alt="Narudžbine">
+                            <img src="{{ url_for('static', filename='images/icons/box_icon.svg') }}" alt="Narudžbine">
                         </a>
                     </div>
                     <div class="nav-link nav-link-right" id="cart-btn">
                         <a href="">
                             <span>Korpa</span>
-                            <img src="icons/icon_cart_gold.svg" alt="Korpa">
+                            <img src="{{ url_for('static', filename='images/icons/icon_cart_gold.svg') }}" alt="Korpa">
                         </a>
                     </div>
                     <div class="nav-link nav-link-right" id="search-btn">
                         <a href="">
                             <span>Pretraga</span>
-                            <img src="icons/icon_search_gold.svg" alt="Pretraga">
+                            <img src="{{ url_for('static', filename='images/icons/icon_search_gold.svg') }}" alt="Pretraga">
                         </a>
                     </div>
                 </div>
@@ -56,19 +56,19 @@
 
     <div class="hero-slider">
         <div class="slides">
-            <img src="images/home_page/hero_slider/omega_de_ville_watch.jpg" alt="Omega watch">
+            <img src="{{ url_for('static', filename='images/home_page/hero_slider/omega_de_ville_watch.jpg') }}" alt="Omega watch">
         </div>
         <div class="slides">
-            <img src="images/home_page/hero_slider/dunhill_watches.jpg" alt="Dunhill watches">
+            <img src="{{ url_for('static', filename='images/home_page/hero_slider/dunhill_watches.jpg') }}" alt="Dunhill watches">
         </div>
         <div class="slides">
-            <img src="images/home_page/hero_slider/lige_watch.jpg" alt="Lige watch">
+            <img src="{{ url_for('static', filename='images/home_page/hero_slider/lige_watch.jpg') }}" alt="Lige watch">
         </div>
         <div class="slides">
-            <img src="images/home_page/hero_slider/group_watches.jpg" alt="Watches">
+            <img src="{{ url_for('static', filename='images/home_page/hero_slider/group_watches.jpg') }}" alt="Watches">
         </div>
         <div class="slides">
-            <img src="images/home_page/hero_slider/seiko_watch.jpg" alt="Seiko watch">
+            <img src="{{ url_for('static', filename='images/home_page/hero_slider/seiko_watch.jpg') }}" alt="Seiko watch">
         </div>
 
         <div class="dots">
@@ -91,42 +91,42 @@
                 </p>
                 <p>Zašto izabrati baš nas?</p>
                 <div class="well-sec-con-text-icon-wrapper">
-                    <img src="icons/check_icon.svg" alt="Check icon">
+                    <img src="{{ url_for('static', filename='images/icons/check_icon.svg') }}" alt="Check icon">
                     <p>Garancija od 3 do 10 godina – svi naši satovi dolaze sa dugom garancijom, što vam pruža sigurnost
                         i mir.</p>
                 </div>
                 <div class="well-sec-con-text-icon-wrapper">
-                    <img src="icons/check_icon.svg" alt="Check icon">
+                    <img src="{{ url_for('static', filename='images/icons/check_icon.svg') }}" alt="Check icon">
                     <p>Kvalitetna usluga – naš stručni tim je uvek spreman da vam pomogne u odabiru, odgovori na sva
                         pitanja i pruži savet prilagođen vašim potrebama.</p>
                 </div>
                 <div class="well-sec-con-text-icon-wrapper">
-                    <img src="icons/check_icon.svg" alt="Check icon">
+                    <img src="{{ url_for('static', filename='images/icons/check_icon.svg') }}" alt="Check icon">
                     <p>Uvek dostupno – veliki izbor satova je spreman za vas, tako da možete odmah pronaći model koji
                         želite.</p>
                 </div>
                 <div class="well-sec-con-text-icon-wrapper">
-                    <img src="icons/check_icon.svg" alt="Check icon">
+                    <img src="{{ url_for('static', filename='images/icons/check_icon.svg') }}" alt="Check icon">
                     <p>Sigurna kupovina – vaše poverenje nam je prioritet. Kod nas kupujete potpuno sigurno, bez brige o
                         kvalitetu ili autentičnosti proizvoda.</p>
                 </div>
                 <div class="well-sec-con-text-icon-wrapper">
-                    <img src="icons/check_icon.svg" alt="Check icon">
+                    <img src="{{ url_for('static', filename='images/icons/check_icon.svg') }}" alt="Check icon">
                     <p>Besplatno čišćenje – svi satovi kupljeni kod nas mogu se besplatno očistiti, kako bi vaš omiljeni
                         sat uvek izgledao savršeno</p>
                 </div>
                 <div class="well-sec-con-text-icon-wrapper">
-                    <img src="icons/check_icon.svg" alt="Check icon">
+                    <img src="{{ url_for('static', filename='images/icons/check_icon.svg') }}" alt="Check icon">
                     <p>Popust za više kupovina – pri kupovini dva ili više satova, ostvarujete 10% popusta, jer znamo da
                         satovi nisu samo predmet, već i strast.</p>
                 </div>
                 <div class="well-sec-con-text-icon-wrapper">
-                    <img src="icons/check_icon.svg" alt="Check icon">
+                    <img src="{{ url_for('static', filename='images/icons/check_icon.svg') }}" alt="Check icon">
                     <p>Brza dostava – vaša narudžbina stiže u najkraćem mogućem roku, direktno na vašu adresu, bez
                         nepotrebnog čekanja.</p>
                 </div>
                 <div class="well-sec-con-text-icon-wrapper">
-                    <img src="icons/check_icon.svg" alt="Check icon">
+                    <img src="{{ url_for('static', filename='images/icons/check_icon.svg') }}" alt="Check icon">
                     <p>Besplatna dostava – svi naši satovi se isporučuju potpuno besplatno, bez dodatnih troškova, bez
                         obzira na vrednost porudžbine.</p>
                 </div>
@@ -245,18 +245,18 @@
         <div class="container">
             <h2>Brendovi</h2>
             <div class="brands-wrapper">
-                <a href=""><img src="images/home_page/brands/edifice_logo.svg" alt="Edifice"></a>
-                <a href=""><img src="images/home_page/brands/daniel_klein_logo.svg" alt="Daniel Klein"></a>
-                <a href=""><img src="images/home_page/brands/fossil_logo.svg" alt="Fossil"></a>
-                <a href=""><img src="images/home_page/brands/lotus_logo.svg" alt="Lotus"></a>
-                <a href=""><img src="images/home_page/brands/tommy_hilfiger_logo.svg" alt="Tommy Hilfiger"></a>
-                <a href=""><img src="images/home_page/brands/casio_logo.svg" alt="Casio"></a>
-                <a href=""><img src="images/home_page/brands/esprit_logo.svg" alt="Esprit"></a>
-                <a href=""><img src="images/home_page/brands/calypso_negro.svg" alt="Calypso"></a>
-                <a href=""><img src="images/home_page/brands/guess_logo.svg" alt="Guess"></a>
-                <a href=""><img src="images/home_page/brands/police_logo.svg" alt="Police"></a>
-                <a href=""><img src="images/home_page/brands/rosefield_logo.svg" alt="Rosefield"></a>
-                <a href=""><img src="images/home_page/brands/sector_logo.svg" alt="Sector"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/edifice_logo.svg') }}" alt="Edifice"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/daniel_klein_logo.svg') }}" alt="Daniel Klein"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/fossil_logo.svg') }}" alt="Fossil"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/lotus_logo.svg') }}" alt="Lotus"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/tommy_hilfiger_logo.svg') }}" alt="Tommy Hilfiger"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/casio_logo.svg') }}" alt="Casio"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/esprit_logo.svg') }}" alt="Esprit"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/calypso_negro.svg') }}" alt="Calypso"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/guess_logo.svg') }}" alt="Guess"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/police_logo.svg') }}" alt="Police"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/rosefield_logo.svg') }}" alt="Rosefield"></a>
+                <a href="{{ url_for('watches') }}"><img src="{{ url_for('static', filename='images/home_page/brands/sector_logo.svg') }}" alt="Sector"></a>
 
             </div>
         </div>
@@ -266,23 +266,23 @@
         <div class="container">
             <div class="suggestion-wrapper">
                 <div class="suggestion-items">
-                    <img src="icons/transport_icon.png" alt="Dostava">
+                    <img src="{{ url_for('static', filename='images/icons/transport_icon.png') }}" alt="Dostava">
                     <span>Brza i besplatna dostava</span>
                 </div>
                 <div class="suggestion-items">
-                    <img src="icons/discount_icon.png" alt="Popust">
+                    <img src="{{ url_for('static', filename='images/icons/discount_icon.png') }}" alt="Popust">
                     <span>Popust za više kupovina</span>
                 </div>
                 <div class="suggestion-items">
-                    <img src="icons/guarantee_icon.png" alt="Garancija i kvalitet">
+                    <img src="{{ url_for('static', filename='images/icons/guarantee_icon.png') }}" alt="Garancija i kvalitet">
                     <span>Garancija i kvalitet</span>
                 </div>
                 <div class="suggestion-items">
-                    <img src="icons/secure_icon.png" alt="Sigurnost">
+                    <img src="{{ url_for('static', filename='images/icons/secure_icon.png') }}" alt="Sigurnost">
                     <span>Sigurna kupovina</span>
                 </div>
                 <div class="suggestion-items">
-                    <img src="icons/clean_icon.png" alt="Čišćenje">
+                    <img src="{{ url_for('static', filename='images/icons/clean_icon.png') }}" alt="Čišćenje">
                     <span>Besplatno čišćenje</span>
                 </div>
             </div>
@@ -293,30 +293,30 @@
         <div class="container">
             <div class="main-footer">
                 <div class="main-footer-column-wrapper">
-                    <a href="./"><img class="footer-logo" src="images/logo/Everwatch_Dark_Blue_Logo.svg"
+                    <a href="./"><img class="footer-logo" src="{{ url_for('static', filename='images/logo/Everwatch_Dark_Blue_Logo.svg') }}"
                             alt="Everwatch Logo"></a>
                     <span>Telefon: 065 / 352 - 2376</span>
                     <span>E-mail: everwatch@store.com</span>
                     <span>Radno vreme: Pon - Sub | 09:00 - 21:00h</span>
                     <div class="social-media">
-                        <a href=""><img src="icons/instagram_icon.svg" alt="Instagram"></a>
-                        <a href=""><img src="icons/facebook_icon.svg" alt="Facebook"></a>
-                        <a href=""><img src="icons/tiktok_icon.svg" alt="TikTok"></a>
+                        <a href=""><img src="{{ url_for('static', filename='images/icons/instagram_icon.svg') }}" alt="Instagram"></a>
+                        <a href=""><img src="{{ url_for('static', filename='images/icons/facebook_icon.svg') }}" alt="Facebook"></a>
+                        <a href=""><img src="{{ url_for('static', filename='images/icons/tiktok_icon.svg') }}" alt="TikTok"></a>
                     </div>
                 </div>
                 <div class="main-footer-column-wrapper">
                     <h4 class="main-footer-headings">KATEGORIJE</h4>
-                    <span><a href="">Muški satovi</a></span>
-                    <span><a href="">Ženski satovi</a></span>
-                    <span><a href="">Dečiji satovi</a></span>
-                    <span><a href="">Univerzalni satovi</a></span>
+                    <span><a href="{{ url_for('watches') }}">Muški satovi</a></span>
+                    <span><a href="{{ url_for('watches') }}">Ženski satovi</a></span>
+                    <span><a href="{{ url_for('watches') }}">Dečiji satovi</a></span>
+                    <span><a href="{{ url_for('watches') }}">Univerzalni satovi</a></span>
                 </div>
                 <div class="main-footer-column-wrapper">
                     <h4 class="main-footer-headings">STRANICE</h4>
                     <span><a href="./">Početna</a></span>
-                    <span><a href="./watches.html">Satovi</a></span>
-                    <span><a href="./about.html">O nama</a></span>
-                    <span><a href="./contact.html">Kontakt</a></span>
+                    <span><a href="{{ url_for('watches') }}">Satovi</a></span>
+                    <span><a href="{{ url_for('about') }}">O nama</a></span>
+                    <span><a href="{{ url_for('contact') }}">Kontakt</a></span>
                 </div>
                 <div class="main-footer-column-wrapper footer-adress">
                     <h4 class="main-footer-headings">ADRESE</h4>
@@ -347,7 +347,7 @@
             <span>Ukupno:</span>
             <span class="products-cart-total">0 RSD</span>
         </div>
-        <button class="order-button" id="order-button">Naruči</button>
+        <a href="{{ url_for('ordering') }}"><button class="order-button" id="order-button">Naruči</button></a>
     </div>
 
     <div class="pop-up-search">
@@ -359,7 +359,7 @@
 
     <div class="pop-up-product pop-up-product-close">
         <div class="pop-up-product-wrapper">
-            <img src="images/products/lotus_satovi_lt003.png" alt="Lotus satovi">
+            <img src="{{ url_for('static', filename='images/products/lotus_satovi_lt003.png') }}" alt="Lotus satovi">
             <div class="pop-up-product-content">
                 <h3>Lotus satovi</h3>
                 <span>Šifra artikla: LT009</span>
@@ -385,14 +385,14 @@
                 </a>
 
                 <div class="close-btn">
-                    <img src="icons/close_icon.svg" alt="Close">
+                    <img src="{{ url_for('static', filename='images/icons/close_icon.svg') }}" alt="Close">
                 </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="./js/script.js"></script>
-    <script type="text/javascript" src="./js/home.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script>
 
 </body>
 

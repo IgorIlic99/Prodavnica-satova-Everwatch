@@ -1,80 +1,127 @@
-from flask import Flask, request, jsonify
+from flask import  Flask, render_template, request, redirect, url_for, jsonify
+import mysql.connector
+from datetime import datetime
 from flask_cors import CORS
 import json
-import os
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app)
 
-#---------------------- Kontakt Forma -----------------------
+konekcija = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",
+    database="everwatchprodavnica"
+)
 
-MESSAGES_FILE  = 'message.json'
+cursor = konekcija.cursor()
 
-@app.route('/posalji_poruku', methods=['POST'])
-def posalji_poruku():
-    data = request.get_json()
+@app.route('/')
+def home():
+    return render_template('index.html', )
 
-    if not os.path.exists(MESSAGES_FILE ):
-        with open(MESSAGES_FILE , 'w', encoding='utf-8') as f:
-            json.dump([], f, ensure_ascii=False, indent=4)
+@app.route('/watches')
+def watches():
+    return render_template('watches.html')
 
-    with open(MESSAGES_FILE , 'r', encoding='utf-8') as f:
-        message = json.load(f)
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
-    message.append(data)
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
-    with open(MESSAGES_FILE , 'w', encoding='utf-8') as f:
-        json.dump(message, f, ensure_ascii=False, indent=4)
+@app.route('/ordering')
+def ordering():
+    return render_template('ordering.html')
 
-    return jsonify({'status': 'success', 'message': 'Poruka sačuvana!'})
-
-@app.route('/poruke', methods=['GET'])
-def prikazi_poruke():
-    if not os.path.exists(MESSAGES_FILE):
-        return jsonify([])
-
-    with open(MESSAGES_FILE, 'r', encoding='utf-8') as f:
-        messages = json.load(f)
-
-    return jsonify(messages)
-
-# http://localhost:5000/poruke
-
-# ------------------ Forma za narudžbinu -------------------
-
-ORDERS_FILE  = 'orders.json'
+@app.route('/orders')
+def orders():
+    return render_template('orders.html')
 
 @app.route('/posalji_narudzbinu', methods=['POST'])
 def naruci_proizvode():
-    data = request.get_json()
 
-    if not os.path.exists(ORDERS_FILE ):
-        with open(ORDERS_FILE , 'w', encoding='utf-8') as f:
-            json.dump([], f, ensure_ascii=False, indent=4)
+    orders = request.get_json()  
 
-    with open(ORDERS_FILE , 'r', encoding='utf-8') as f:
-        orders = json.load(f)
+    cursorDodaj = konekcija.cursor(dictionary=True)
 
-    orders.append(data)
+    valueInsert_list = []
 
-    with open(ORDERS_FILE , 'w', encoding='utf-8') as f:
-        json.dump(orders, f, ensure_ascii=False, indent=4)
+    valueInsert_list.append(orders['datum'])
 
-    return jsonify({'status': 'success', 'message': 'Narudžbina uspešno sačuvana!'})
+    valueInsert_list.append(orders['kontakt_informacije']['broj_telefona'])
+    valueInsert_list.append(orders['kontakt_informacije']['email'])
 
-@app.route('/narudzbine', methods=['GET'])
-def prikazi_narudzbine():
-    if not os.path.exists(ORDERS_FILE):
-        return jsonify([])
+    adresa_i = orders['adresa_za_isporuku']
+    valueInsert_list.append(adresa_i['ime'])
+    valueInsert_list.append(adresa_i['prezime'])
+    valueInsert_list.append(adresa_i['grad'])
+    valueInsert_list.append(adresa_i['naselje'])
+    valueInsert_list.append(adresa_i['adresa'])
+    valueInsert_list.append(adresa_i['postanski_broj'])
+    valueInsert_list.append(adresa_i['okrug'])
 
-    with open(ORDERS_FILE, 'r', encoding='utf-8') as f:
-        orders = json.load(f)
+    adresa_n = orders['adresa_za_naplatu']
+    valueInsert_list.append(adresa_n['ime'])
+    valueInsert_list.append(adresa_n['prezime'])
+    valueInsert_list.append(adresa_n['grad'])
+    valueInsert_list.append(adresa_n['naselje'])
+    valueInsert_list.append(adresa_n['adresa'])
+    valueInsert_list.append(adresa_n['postanski_broj'])
+    valueInsert_list.append(adresa_n['okrug'])
 
-    return jsonify(orders)
+    valueInsert_list.append(orders['napomena'])
+    valueInsert_list.append(json.dumps(orders['proizvodi']))
+    valueInsert_list.append(orders['ukupna_cena'])
 
-# http://localhost:5000/narudzbine
+    valueInsert = tuple(valueInsert_list)
 
-#----------------------------------------------------------
+    upitDodaj = "INSERT INTO `orders`(`datum`, `kontakt_informacije.broj_telefona`, `kontakt_informacije.email`, `adresa_za_isporuku.ime`, `adresa_za_isporuku.prezime`, `adresa_za_isporuku.grad`, `adresa_za_isporuku.naselje`, `adresa_za_isporuku.adresa`, `adresa_za_isporuku.postanski_broj`, `adresa_za_isporuku.okrug`, `adresa_za_naplatu.ime`, `adresa_za_naplatu.prezime`, `adresa_za_naplatu.grad`, `adresa_za_naplatu.naselje`, `adresa_za_naplatu.adresa`, `adresa_za_naplatu.postanski_broj`, `adresa_za_naplatu.okrug`, `napomena`, `proizvodi`, `ukupna_cena`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    cursorDodaj.execute(upitDodaj, valueInsert)
+    
+    konekcija.commit()
+
+    return {'status': 'success', 'message': 'Podaci primljeni. Spreman za upis u bazu.'}, 200
+
+@app.route('/posalji_poruku', methods=['POST'])
+def submit():
+    if request.method == 'POST':
+        ime = request.form['ime']
+        prezime = request.form['prezime']
+        broj_telefona = request.form['broj-telefona']
+        email = request.form['e-mail']
+        poruka = request.form['poruka']
+        datum = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        cursor.execute("INSERT INTO `message`(`ime`, `prezime`, `broj_telefona`, `email`, `poruka`, `datum`) VALUES (%s, %s, %s, %s, %s, %s)", (ime, prezime, broj_telefona, email, poruka, datum))
+        konekcija.commit()
+
+        return redirect(url_for('contact'))
+    
+@app.route('/api/products', methods=['GET'])
+def get_products_json():
+    
+    if not konekcija.is_connected():
+        return jsonify({'error': 'Greška konekcije sa bazom podataka.'}), 500
+        
+    try:
+        cursorPrikazi = konekcija.cursor(dictionary=True)
+        upitPrikazi = "SELECT * FROM products"
+        cursorPrikazi.execute(upitPrikazi)
+        
+        rezultati = cursorPrikazi.fetchall()
+        cursorPrikazi.close()
+
+        return jsonify(rezultati) 
+
+    except mysql.connector.Error as err:
+        print(f"SQL Greška: {err}")
+        return jsonify({'error': f'Greška pri izvršavanju SQL upita: {err}'}), 500
+    except Exception as e:
+        print(f"Neočekivana greška: {e}")
+        return jsonify({'error': f'Serverska greška: {e}'}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

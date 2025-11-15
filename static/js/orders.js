@@ -1,7 +1,18 @@
+
+//---------------------- Orders Section ------------------------
+
 const ordersSection = document.querySelector(".orders-section");
 let ordersInformation = getOrdersFromLocalStorage();
 
 for (let i = 0; i < ordersInformation.length; i++) {
+
+    const datum = new Date(ordersInformation[i].datum);
+
+    const srpskiDatumLatinica = datum.toLocaleDateString('sr-Latn-RS', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric' 
+    });
 
     ordersSection.innerHTML += `
             <div class="orders-section-content">
@@ -14,7 +25,7 @@ for (let i = 0; i < ordersInformation.length; i++) {
                                 <div class="orders-content">
                                     <span>Broj telefona: ${ordersInformation[i].kontakt_informacije.broj_telefona}</span>
                                     <span>E-mail adresa: ${ordersInformation[i].kontakt_informacije.email}</span>
-                                    <span>Datum: ${ordersInformation[i].datum}</span>
+                                    <span>Datum: ${srpskiDatumLatinica}</span>
                                 </div>
                             </div>
                             <div class="delivery-address">
@@ -91,7 +102,7 @@ for (let i = 0; i < ordersInformation.length; i++) {
         ordersProductList[i].innerHTML += `
                 <div class="orders-product">
                     <div class="orders-product-img-mini-info-wrapper">
-                        <img src="images/products/${orderProducts[j].img}" alt="${orderProducts[j].title}">
+                        <img src="static/images/products/${orderProducts[j].img}" alt="${orderProducts[j].title}">
                         <div class="orders-product-mini-info">
                             <span>${orderProducts[j].brand}</span>
                             <span>${orderProducts[j].id}</span>
